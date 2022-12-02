@@ -41,7 +41,12 @@ export async function getStaticProps(
     preview: ctx.preview,
   })
 
-  if (snapshot == null) return { notFound: true }
+  console.log({
+    isSnapshot: snapshot != null,
+    ctx: JSON.stringify(ctx, null, 2),
+  });
+
+  if (snapshot == null) return { notFound: true };
 
   return { props: { snapshot } }
 }
